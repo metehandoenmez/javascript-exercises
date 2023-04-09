@@ -1,5 +1,5 @@
 function adultFilter(persons) {
-  // ...
+  return persons.filter(val => val.age >= 18);
 }
 
 const persons = [
@@ -18,3 +18,8 @@ const persons = [
 const adults = adultFilter(persons);
 console.log(persons);
 console.log(adults);
+
+//also tried to sort them by age
+sorted = adults.sort((a,b) => a.age - b.age);
+console.log(sorted);
+
