@@ -1,5 +1,17 @@
-function uncompletedNotes(notes) {
-  // ...
+function uncompletedNotes(arr) {
+  let uncompletedTodos = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let todos = arr[i].todos;
+    for (let j = 0; j < todos.length; j++) {
+      let todo = todos[j];
+
+      if (!todo.done) {
+        uncompletedTodos.push(todo);
+      }
+    }
+}
+console.log(uncompletedTodos);
 }
 
 const notes = [
