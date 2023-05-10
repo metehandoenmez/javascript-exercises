@@ -11,7 +11,8 @@ class Person {
   }
   
   static fromJson(arg) {
-    return JSON.parse(arg);
+    let parsed = JSON.parse(arg);
+    return new Person(parsed.id, parsed.firstName, parsed.lastName, parsed.age)
   }
 }
 
