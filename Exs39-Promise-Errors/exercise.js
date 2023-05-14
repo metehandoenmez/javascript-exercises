@@ -18,7 +18,7 @@ let promise2 = (number) => {
             resolve({name: "John",age:24})
         }
         else {
-            reject(new Error())
+            reject(new Error("Less than 0.5"))
         }
     })
 }
@@ -32,4 +32,7 @@ return promise2(random);
 })
 .catch((error) => {
     console.error(error);
+})
+.finally(() => {
+    console.log("Finished")
 })
