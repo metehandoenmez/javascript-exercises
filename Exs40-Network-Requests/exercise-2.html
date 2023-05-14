@@ -1,9 +1,25 @@
 <html>
   <body>
-    <div id="container" style="display: flex; align-items: center;"></div>
+    <div id="container" style="display: flex; align-items: center;">
+    <ul class="todo-list"></ul></div>
   </body>
 </html>
 
 <script>
-  // code here
+  async function fetchFunc() {
+    try {
+      let response = await fetch("https://jsonplaceholder.typicode.com/todos");
+      let todos = await response.json();
+      let list = document.querySelector(".todo-list");
+      todos.forEach((ele) => {
+        let listChild = document.createElement("li");
+        listChild.textContent = ele.title;
+        list.appendChild(listChild);
+      });
+    } catch (error) {
+      console.error("error");
+    }
+  }
+
+  fetchFunc();
 </script>
