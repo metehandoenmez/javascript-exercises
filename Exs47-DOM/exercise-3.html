@@ -20,5 +20,13 @@
 </html>
 
 <script>
-  // code here
+  let formInput = document.querySelectorAll(".form-input");
+
+  let output = [];
+  formInput.forEach(input => {
+    let label = input.previousElementSibling.textContent;
+    let value = input.value;
+    output.push(label + value)
+  })
+  console.log(output);
 </script>
